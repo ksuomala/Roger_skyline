@@ -50,12 +50,18 @@ apt-get update
 apt-get upgrade
 ```
 Part II:
-Subject: 
-"For the network on your VM, here are the steps to achieve:
+For the network on your VM, here are the steps to achieve:
 • You must create a non-root user to connect to the machine and work.
+  This was done during Debian installation
+
 • Use sudo, with this user, to be able to perform operation requiring special rights.
+  Install sudo with ```apt-get install sudo```.
+  Add the user account to the group sudo with ```/sbin/adduser username sudo```. Where username is your user account.
+  To test that it works we can log out, log back in and run ```sudo echo "I'm a sudo user```.
+  
 • We don’t want you to use the DHCP service of your machine. You’ve got to
 configure it to have a static IP and a Netmask in \30.
+  
 • You have to change the default port of the SSH service by the one of your choice.
 SSH access HAS TO be done with publickeys. SSH root access SHOULD NOT
 be allowed directly, but with a user who can be root.
@@ -69,7 +75,9 @@ of your VM.
 which logs the whole in a file named /var/log/update_script.log. Create a scheduled
 task for this script once a week at 4AM and every time the machine reboots.
 • Make a script to monitor changes of the /etc/crontab file and sends an email to
-root if it has been modified. Create a scheduled script task every day at midnight."
+root if it has been modified. Create a scheduled script task every day at midnight.
+
+
 
 
 
