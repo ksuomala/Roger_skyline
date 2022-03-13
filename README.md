@@ -63,10 +63,6 @@ For the network on your VM, here are the steps to achieve:
 configure it to have a static IP and a Netmask in \30.
   Enable static ip:
   Go to VirtualBox settings - Network. Change NAT to Bridged Adapter.
-  In ```/etc/network/interfaces``` file, we change
-  ```iface eth0 inet dhcp```
-  to
-  ```iface eth0 inet static```.
   
   Define your network interfaces separately within /etc/network/interfaces.d/ directory. 
   ```
@@ -74,7 +70,13 @@ configure it to have a static IP and a Netmask in \30.
   sudo touch enp0s3
   sudo nano enp0s3
   ```
-  
+  In enp0s3:
+  ```
+   iface enp0s3 inet static
+    address 10.11.203.255
+    netmask 255.255.255.252
+    gateway 10.11.254.254
+  ```
   
 • You have to change the default port of the SSH service by the one of your choice.
 SSH access HAS TO be done with publickeys. SSH root access SHOULD NOT
