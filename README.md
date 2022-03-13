@@ -44,9 +44,33 @@ Click "Finish partitioning and write changes to disk"
 Now you can log into your Debian operating system. Desktop environment does not need to be installed.
 
 Then we make sure that our Debian and packages are up to date as root:
-```su
+```
+su
 apt-get update
-apt-get upgrade````
+apt-get upgrade
+```
+Part II:
+Subject: 
+"For the network on your VM, here are the steps to achieve:
+• You must create a non-root user to connect to the machine and work.
+• Use sudo, with this user, to be able to perform operation requiring special rights.
+• We don’t want you to use the DHCP service of your machine. You’ve got to
+configure it to have a static IP and a Netmask in \30.
+• You have to change the default port of the SSH service by the one of your choice.
+SSH access HAS TO be done with publickeys. SSH root access SHOULD NOT
+be allowed directly, but with a user who can be root.
+• You have to set the rules of your firewall on your server only with the services used
+outside the VM.
+• You have to set a DOS (Denial Of Service Attack) protection on your open ports
+of your VM.
+• You have to set a protection against scans on your VM’s open ports.
+• Stop the services you don’t need for this project.
+• Create a script that updates all the sources of package, then your packages and
+which logs the whole in a file named /var/log/update_script.log. Create a scheduled
+task for this script once a week at 4AM and every time the machine reboots.
+• Make a script to monitor changes of the /etc/crontab file and sends an email to
+root if it has been modified. Create a scheduled script task every day at midnight."
+
 
 
 
