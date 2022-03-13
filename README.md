@@ -61,8 +61,20 @@ For the network on your VM, here are the steps to achieve:
   
 • We don’t want you to use the DHCP service of your machine. You’ve got to
 configure it to have a static IP and a Netmask in \30.
+  Enable static ip:
   Go to VirtualBox settings - Network. Change NAT to Bridged Adapter.
-  Then we will follow [these instructions:](https://linuxconfig.org/how-to-setup-a-static-ip-address-on-debian-linux)
+  In ```/etc/network/interfaces``` file, we change
+  ```iface eth0 inet dhcp```
+  to
+  ```iface eth0 inet static```.
+  
+  Define your network interfaces separately within /etc/network/interfaces.d/ directory. 
+  ```
+  cd interfaces.d
+  sudo touch enp0s3
+  sudo nano enp0s3
+  ```
+  
   
 • You have to change the default port of the SSH service by the one of your choice.
 SSH access HAS TO be done with publickeys. SSH root access SHOULD NOT
