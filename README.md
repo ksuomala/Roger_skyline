@@ -78,6 +78,14 @@ configure it to have a static IP and a Netmask in \30.
     gateway 10.11.254.254
   ```
   
+  ```
+  sudo service networking restart
+  ip a
+  ```
+  if if enp0s3 is down run ```ip link set enp0s3 up```
+  
+  --------------------------------
+  REST OF THE PROJECT IS IN PROGRESS.
 • You have to change the default port of the SSH service by the one of your choice.
 SSH access HAS TO be done with publickeys. SSH root access SHOULD NOT
 be allowed directly, but with a user who can be root.
