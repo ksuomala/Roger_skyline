@@ -41,9 +41,12 @@ Then we create another logical partition with the mount point at ```/home``` for
 
 Click "Finish partitioning and write changes to disk"
 
-Now you can log into your Debian operating system.
+Now you can log into your Debian operating system. Desktop environment does not need to be installed.
 
-
+Then we make sure that our Debian and packages are up to date as root:
+```su
+apt-get update
+apt-get upgrade````
 
 
 
