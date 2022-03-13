@@ -17,4 +17,4 @@ the demands of this subject."
 I chose Debian for the operating system. I downloaded debian-11.2.0-amd64-netinst.iso from https://www.debian.org.
 
 
-![Test Image 1](img/Screenshot 2022-03-13 at 13.52.14.png)
+![Test Image 1](https://github.com/ksuomala/Roger_skyline/blob/main/img/Screenshot%202022-03-13%20at%2013.52.14.png)
