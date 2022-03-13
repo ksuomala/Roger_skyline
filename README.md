@@ -57,7 +57,7 @@ For the network on your VM, here are the steps to achieve:
 • Use sudo, with this user, to be able to perform operation requiring special rights.
   Install sudo with ```apt-get install sudo```.
   Add the user account to the group sudo with ```/sbin/adduser username sudo```. Where username is your user account.
-  To test that it works we can log out, log back in and run ```sudo echo "I'm a sudo user```.
+  To test that it works we can log out, log back in and run ```sudo echo "I'm a sudo user"```.
   
 • We don’t want you to use the DHCP service of your machine. You’ve got to
 configure it to have a static IP and a Netmask in \30.
