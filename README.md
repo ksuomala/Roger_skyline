@@ -87,8 +87,30 @@ configure it to have a static IP and a Netmask in \30.
   --------------------------------
   REST OF THE PROJECT IS IN PROGRESS.
 • You have to change the default port of the SSH service by the one of your choice.
-SSH access HAS TO be done with publickeys. SSH root access SHOULD NOT
+
+
+
+  Modify the sshd configuration file: ```/etc/ssh/sshd_config```
+  
+  Change Port 22 to a port of your choise. Use an appropriate port, also making sure that it's not being currently
+  used by the system. The Well Known Ports are those from 0 through 1023 and SHOULD NOT be used. Registered Ports are those from 1024 through 49151 should   also be avoided. Dynamic and/or Private Ports are those from 49152 through 65535 and can be used.  I used 50683. (according to IANA).
+  
+  Switch over to the new port by restarting ssh: ```sudo /etc/init.d/ssh restart```
+
+  verify the ssh is listening ```/etc/ssh/sshd_config```
+ 
+  You can check your ssh service status by with: ```sudo systemctl status ssh```
+  
+  Now we can connect to the server via ssh using ```ssh username@hostname.com -p 50683```
+
+  You can get your host ip with: ```hostname -I```
+  
+• SSH access HAS TO be done with publickeys. SSH root access SHOULD NOT
+  You can check your ssh service status by with: ```sudo systemctl status ssh```
 be allowed directly, but with a user who can be root.
+
+  Generate rsa keypair: ```ssh-keygen -t rsa```
+  
 • You have to set the rules of your firewall on your server only with the services used
 outside the VM.
 • You have to set a DOS (Denial Of Service Attack) protection on your open ports
