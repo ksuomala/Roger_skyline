@@ -65,6 +65,9 @@ configure it to have a static IP and a Netmask in \30.
   Go to VirtualBox settings - Network. Change NAT to Bridged Adapter.
   
   Define your network interfaces separately within /etc/network/interfaces.d/ directory. 
+  
+  My host ip was 192.168.86.129. I chose 192.168.86.130 for my VM.
+  Subnet mask is set to /30 = 255.255.255.252 (first 30 bits are on.)
   ```
   cd interfaces.d
   sudo touch enp0s3
@@ -73,9 +76,8 @@ configure it to have a static IP and a Netmask in \30.
   In enp0s3:
   ```
    iface enp0s3 inet static
-    address 10.11.203.255
+    address 192.168.86.130
     netmask 255.255.255.252
-    gateway 10.11.254.254
   ```
   
   ```
@@ -85,10 +87,7 @@ configure it to have a static IP and a Netmask in \30.
   if if enp0s3 is down run ```ip link set enp0s3 up```
   
   --------------------------------
-  REST OF THE PROJECT IS IN PROGRESS.
 • You have to change the default port of the SSH service by the one of your choice.
-
-
 
   Modify the sshd configuration file: ```/etc/ssh/sshd_config```
   
@@ -103,11 +102,12 @@ configure it to have a static IP and a Netmask in \30.
   
   Now we can connect to the server via ssh using ```ssh username@hostname.com -p 50683```
 
-  You can get your host ip with: ```hostname -I```
+  You can get your ip with: ```hostname -I```
   
 • SSH access HAS TO be done with publickeys. SSH root access SHOULD NOT
-  You can check your ssh service status by with: ```sudo systemctl status ssh```
-be allowed directly, but with a user who can be root.
+  vbe allowed directly, but with a user who can be root.
+
+  You can check your ssh service status  with: ```sudo systemctl status ssh```
 
   Generate rsa keypair: ```ssh-keygen -t rsa```
   
