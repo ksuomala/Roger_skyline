@@ -135,6 +135,8 @@ $ sudo ufw allow 50683/tcp
 of your VM.
 
   For testing this we need apache: ```$ sudo apt install apache2```
+  
+  I used these instructions next: https://www.garron.me/en/go2linux/fail2ban-protect-web-server-http-dos-attack.html
 
   ```$ sudo apt-get install fail2ban```
 
