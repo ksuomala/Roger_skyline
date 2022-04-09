@@ -111,6 +111,11 @@ configure it to have a static IP and a Netmask in \30.
 
   Generate rsa keypair: ```ssh-keygen -t rsa```
   
+  Install the key to your server: ``` ssh-copy-id -p 50683 -i ~/.ssh/id_rsa.pub ksuomala@192.168.86.130```
+  
+  To disable root SSH login, edit /etc/ssh/sshd_config. Change the line  # PermitRootLogin yes to PermitRootLogin no. Restart the SSH daemon: ```sudo   
+  service sshd restart.```
+  
 • You have to set the rules of your firewall on your server only with the services used
 outside the VM.
 • You have to set a DOS (Denial Of Service Attack) protection on your open ports
