@@ -168,6 +168,7 @@ of your VM.
   bantime = 600
   ```
   
+  ![http-get-dos](https://github.com/ksuomala/Roger_skyline/blob/main/img/Screenshot%202022-04-09%20at%2016.07.06.png)
   
 
 • You have to set a protection against scans on your VM’s open ports.
