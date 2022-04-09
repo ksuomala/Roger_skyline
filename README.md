@@ -134,7 +134,9 @@ $ sudo ufw allow 50683/tcp
 • You have to set a DOS (Denial Of Service Attack) protection on your open ports
 of your VM.
 
-```$ sudo apt-get install fail2ban```
+  For testing this we need apache: ```$ sudo apt install apache2```
+
+  ```$ sudo apt-get install fail2ban```
 
 
 
