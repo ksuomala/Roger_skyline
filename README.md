@@ -139,8 +139,36 @@ of your VM.
   I used these instructions next: https://www.garron.me/en/go2linux/fail2ban-protect-web-server-http-dos-attack.html
 
   ```$ sudo apt-get install fail2ban```
-
-
+  
+  ```
+  $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+  $ sudo vim /etc/fail2ban/fail2ban.local
+  ```
+  
+  ```
+  #
+  # JAILS
+  #
+  
+  # 
+  # SSH servers
+  #
+  
+  [sshd]
+  
+  # To use more aggressive sshd modes set filter parameter "mode" in jail.local:
+  # normal (default), ddos, extra or aggressive (combines all).
+  # See "tests/files/logs/sshd" or "filtesr.d/sshd.conf" for usage example and details.
+  #mode   = normal
+  enable  = true
+  port    = ssh
+  logpath = %(sshd_log)s
+  backend = %(sshd_backend)s
+  maxentry = 3
+  bantime = 600
+  ```
+  
+  
 
 • You have to set a protection against scans on your VM’s open ports.
 • Stop the services you don’t need for this project.
