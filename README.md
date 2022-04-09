@@ -120,8 +120,24 @@ configure it to have a static IP and a Netmask in \30.
   
 • You have to set the rules of your firewall on your server only with the services used
 outside the VM.
+
+```
+$ sudo apt install ufw
+$ sudo ufw default deny incoming
+$ sudo ufw default allow outgoing
+$ sudo ufw allow 443
+$ sudo ufw allow 80/tcp
+$ sudo ufw allow 50683/tcp
+```
+
+
 • You have to set a DOS (Denial Of Service Attack) protection on your open ports
 of your VM.
+
+```$ sudo apt-get install fail2ban```
+
+
+
 • You have to set a protection against scans on your VM’s open ports.
 • Stop the services you don’t need for this project.
 • Create a script that updates all the sources of package, then your packages and
