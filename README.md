@@ -140,11 +140,13 @@ of your VM.
 
   ```$ sudo apt-get install fail2ban```
   
+
+  Modify fail2ban.local:
+  
   ```
   $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
   $ sudo vim /etc/fail2ban/fail2ban.local
   ```
-  
   ```
   #
   # JAILS
@@ -167,9 +169,24 @@ of your VM.
   maxentry = 3
   bantime = 600
   ```
+  Add this to the end of the file:
   
   ![http-get-dos](https://github.com/ksuomala/Roger_skyline/blob/main/img/Screenshot%202022-04-09%20at%2016.07.06.png)
   
+Now we need to create a filter. 
+```$ sudo nano /etc/fail2ban/filter.d/http-get-dos.conf```
+```
+[Definition]
+
+failregex = ^ -.GET
+ignoreregex =
+```
+
+```
+$ sudo ufw reload
+$ sudo service fail2ban restart
+```
+
 
 • You have to set a protection against scans on your VM’s open ports.
 • Stop the services you don’t need for this project.
