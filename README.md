@@ -82,7 +82,6 @@ configure it to have a static IP and a Netmask in \30.
 
   sudo service networking restart
   ip a
-  ```
   if if enp0s3 is down run ```ip link set enp0s3 up```
   
   --------------------------------
