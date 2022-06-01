@@ -71,7 +71,8 @@ configure it to have a static IP and a Netmask in \30.
   
   to
   
-  ```iface enp0s3 inet static
+  ```
+  iface enp0s3 inet static
       network choose_static_ip
       netmask 255.255.255.252
   ```
