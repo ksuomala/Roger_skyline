@@ -66,16 +66,33 @@ configure it to have a static IP and a Netmask in \30.
   Enable static ip:
   Go to VirtualBox settings - Network. Change NAT to Bridged Adapter.
   
-  First, Modify the line in /etc/network/interfaces
-  ```iface enp0s3 inet dhcp``` 
-  
-  to
-  
-  ```
-  iface enp0s3 inet static
-      network choose_static_ip
+
+Create a new network interface configuration. I chose the next ip address from my host:
+
+```
+# cat /etc/network/interfaces.d/eth0
+iface enp0s3 inet static
+      address your_static_ip
       netmask 255.255.255.252
-  ```
+      gateway 10.11.254.254
+```   
+
+and modify:
+
+```
+# cat /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug enp0s3
+```
   
   
 ```
