@@ -67,25 +67,18 @@ configure it to have a static IP and a Netmask in \30.
   Go to VirtualBox settings - Network. Change NAT to Bridged Adapter.
   
   First, Modify the line in /etc/network/interfaces
-  ```iface enp0s3 inet dhcp``` to ```iface enp0s3 inet static```
+  ```iface enp0s3 inet dhcp``` 
+  
+  to
+  
+  ```iface enp0s3 inet static
+      network choose_static_ip
+      netmask 255.255.255.252
+  ```
   
   Define your network interfaces separately within /etc/network/interfaces.d/ directory. 
   
-  My host ip was 192.168.86.129. I chose 192.168.86.130 for my VM.
-  Subnet mask is set to /30 = 255.255.255.252 (first 30 bits are on.)
-  ```
-  cd interfaces.d
-  sudo touch enp0s3
-  sudo nano enp0s3
-  ```
-  In enp0s3:
-  ```
-   iface enp0s3 inet static
-    address 192.168.86.130
-    netmask 255.255.255.252
-  ```
-  
-  ```
+
   sudo service networking restart
   ip a
   ```
