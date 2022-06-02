@@ -202,6 +202,18 @@ $ sudo service fail2ban restart
 
 
 • You have to set a protection against scans on your VM’s open ports.
+
+To do this we install the portsentry daemon. This daemon will watch unused ports for activity and depending on how it is configured take action upon excessive access to watched ports.
+
+```$ sudo apt-get install portsentry```
+
+modify the file /etc/default/portsentry:
+
+```
+TCP_MODE="atcp"
+UDP_MODE="audp"
+```
+
 • Stop the services you don’t need for this project.
 • Create a script that updates all the sources of package, then your packages and
 which logs the whole in a file named /var/log/update_script.log. Create a scheduled
