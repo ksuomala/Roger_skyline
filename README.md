@@ -227,11 +227,14 @@ passing ```BLOCK_UDP``` and ```BLOCK_TCP``` to 1; modify ```/etc/portsentry/port
 
 BLOCK_UDP="1"
 BLOCK_TCP="1"
+```
 
 We opt for a blocking of malicious persons through iptables. We will therefore comment on all lines of the configuration file that begin with KILL_ROUTE except this one:
-
 ```KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"```
-```
+
+Verify your doings
+
+```$ cat portsentry.conf | grep KILL_ROUTE | grep -v "#"```
 
 • Stop the services you don’t need for this project.
 • Create a script that updates all the sources of package, then your packages and
