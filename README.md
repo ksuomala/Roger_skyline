@@ -203,7 +203,7 @@ $ sudo service fail2ban restart
 
 • You have to set a protection against scans on your VM’s open ports.
 
-To do this we install the portsentry daemon. This daemon will watch unused ports for activity and depending on how it is configured take action upon excessive access to watched ports.
+To do this we install the portsentry daemon. This daemon will watch unused ports for activity and depending on how it is configured then react to attempts to access these ports (presumably by people trying to break in) in ways that you choose.
 
 ```$ sudo apt-get install portsentry```
 
@@ -212,6 +212,25 @@ modify the file /etc/default/portsentry:
 ```
 TCP_MODE="atcp"
 UDP_MODE="audp"
+```
+
+Set up blocks:
+passing ```BLOCK_UDP``` and ```BLOCK_TCP``` to 1; modify ```/etc/portsentry/portsentry.conf```:
+
+```
+##################
+# Ignore Options #
+##################
+# 0 = Do not block UDP/TCP scans.
+# 1 = Block UDP/TCP scans.
+# 2 = Run external command only (KILL_RUN_CMD)
+
+BLOCK_UDP="1"
+BLOCK_TCP="1"
+
+We opt for a blocking of malicious persons through iptables. We will therefore comment on all lines of the configuration file that begin with KILL_ROUTE except this one:
+
+```KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"```
 ```
 
 • Stop the services you don’t need for this project.
