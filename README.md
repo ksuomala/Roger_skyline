@@ -125,13 +125,11 @@ allow-hotplug enp0s3
 
   Generate rsa keypair: ```ssh-keygen -t rsa```
   
-  Install the key to your server: ``` ssh-copy-id -p 50683 -i ~/.ssh/id_rsa.pub ksuomala@192.168.86.130```
+  Install the key to your server: ``` ssh-copy-id -p 50683 -i ~/.ssh/id_rsa.pub user@hostname```
   
   To disable root SSH login, edit /etc/ssh/sshd_config. Change the line  ```# PermitRootLogin yes``` to ```PermitRootLogin no```
   
   Restart the SSH daemon: ```sudo service sshd restart.```
-  
-  At this point I realized that my VM is not connected to the internet.
   
 • You have to set the rules of your firewall on your server only with the services used
 outside the VM.
