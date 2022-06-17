@@ -160,7 +160,7 @@ of your VM.
   ```$ sudo apt-get install fail2ban```
   
 
-  Modify fail2ban.local:
+  Modify jail.local:
   
   ```
   $ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
