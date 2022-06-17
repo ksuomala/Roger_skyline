@@ -244,6 +244,8 @@ Verify your doings
 
 ```$ cat portsentry.conf | grep KILL_ROUTE | grep -v "#"```
 
+To test the DOS I used these instructions: https://ourcodeworld.com/articles/read/949/how-to-perform-a-dos-attack-slow-http-with-slowhttptest-test-your-server-slowloris-protection-in-kali-linux
+
 • Stop the services you don’t need for this project.
 
 To see all your active services:
