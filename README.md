@@ -53,6 +53,10 @@ Part II:
 For the network on your VM, here are the steps to achieve:
 • You must create a non-root user to connect to the machine and work.
   This was done during Debian installation
+  
+  If you wish to create a new user you can ```adduser username```
+  
+  To add it to sudo: ```sudo usermod -aG sudo username```
 
 • Use sudo, with this user, to be able to perform operation requiring special rights.
   Install sudo with ```apt-get install sudo```.
