@@ -140,6 +140,8 @@ allow-hotplug enp0s3
 • You have to set the rules of your firewall on your server only with the services used
 outside the VM.
 
+To see the firewall settings: ```sudo ufw status verbose```
+
 ```
 $ sudo apt install ufw
 $ sudo ufw default deny incoming
