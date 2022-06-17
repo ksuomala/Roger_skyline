@@ -192,6 +192,9 @@ of your VM.
   
   ![http-get-dos](https://github.com/ksuomala/Roger_skyline/blob/main/img/Screenshot%202022-04-09%20at%2016.07.06.png)
   
+  
+  ```sudo fail2ban-client status```
+  
 Now we need to create a filter. 
 ```$ sudo nano /etc/fail2ban/filter.d/http-get-dos.conf```
 ```
