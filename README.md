@@ -206,6 +206,8 @@ $ sudo ufw reload
 $ sudo service fail2ban restart
 ```
 
+To see the logs ```sudo tail -f /var/log/fail2ban.log```
+
 
 • You have to set a protection against scans on your VM’s open ports.
 
