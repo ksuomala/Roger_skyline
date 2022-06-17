@@ -195,9 +195,9 @@ of your VM.
 Now we need to create a filter. 
 ```$ sudo nano /etc/fail2ban/filter.d/http-get-dos.conf```
 ```
-[Definition]
 
-failregex = ^ -.GET
+[Definition]
+failregex = ^<HOST> -.*"(GET|POST).*
 ignoreregex =
 ```
 
