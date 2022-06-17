@@ -106,6 +106,8 @@ allow-hotplug enp0s3
   
   if if enp0s3 is down run ```ip link set enp0s3 up```
   
+  It always seems to be a good idea to restart your VM after network modifications
+  
   --------------------------------
 • You have to change the default port of the SSH service by the one of your choice.
 
