@@ -293,6 +293,12 @@ Send mail instructions from tasmiarahmanjin https://github.com/tasmiarahmantanji
 11. Congratulations: You have a new mail in root
 ```
 
+To delete your mail, in mail terminal:
+
+```
+? delete *
+? q
+```
 
 
 
