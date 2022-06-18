@@ -277,6 +277,22 @@ task for this script once a week at 4AM and every time the machine reboots.
 • Make a script to monitor changes of the /etc/crontab file and sends an email to
 root if it has been modified. Create a scheduled script task every day at midnight.
 
+Send mail instructions from tasmiarahmanjin https://github.com/tasmiarahmantanjin/roger_skyline_1
+
+```
+1. First, create a **new_user**
+2. Go to: **vim /etc/aliases**
+3. Change the last_line of: **/etc/aliases** and change to: root: **new_user**
+4. Then, you will see mail to **new_user** by: mail -u new_user
+5. Redirect the mail from **new_user** to **root**
+6. rm /var/spool/mail/root :before creating soft_link
+7. ln -s /var/spool/mail/new_user /var/spool/mail/root :For creating soft_link
+8. Add: anything to /etc/crontab file
+9. bash cron_monitor.sh
+10. mail -u root
+11. Congratulations: You have a new mail in root
+```
+
 
 
 
