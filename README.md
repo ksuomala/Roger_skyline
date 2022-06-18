@@ -247,7 +247,12 @@ Verify your doings
 
 ```$ cat portsentry.conf | grep KILL_ROUTE | grep -v "#"```
 
-To test the DOS I used these instructions: https://ourcodeworld.com/articles/read/949/how-to-perform-a-dos-attack-slow-http-with-slowhttptest-test-your-server-slowloris-protection-in-kali-linux
+Install nmap
+run ```nmap 10.11.199.199```
+
+Your ip will appear in ```iptables --list | head```
+
+```iptables -D INPUT 1``` will delete your ip from iptables --list
 
 • Stop the services you don’t need for this project.
 
