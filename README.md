@@ -217,6 +217,7 @@ $ sudo service fail2ban restart
 
 To see the logs ```sudo tail -f /var/log/fail2ban.log```
 
+ab -k -c 350 -n 20000 http://10.11.199.13/
 
 • You have to set a protection against scans on your VM’s open ports.
 
