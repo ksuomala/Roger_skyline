@@ -200,6 +200,7 @@ of your VM.
   
   
   ```sudo fail2ban-client status```
+  ```sudo fail2ban-client status http-get-dos```
   
 Now we need to create a filter. 
 ```$ sudo nano /etc/fail2ban/filter.d/http-get-dos.conf```
