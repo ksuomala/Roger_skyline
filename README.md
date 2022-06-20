@@ -85,6 +85,8 @@ iface enp0s3 inet static
       gateway 10.11.254.254
 ```   
 
+Check open ports: ```sudo lsof -i -P -n | grep LISTEN```
+
 and modify:
 
 ```
