@@ -267,6 +267,8 @@ Your ip will appear in ```iptables --list | head```
 To see all your active services:
 
 ```systemctl list-units --type service --state active```
+or
+```sudo systemctl list-unit-files --type service --state=enabled```
 
 To disable services:
 
