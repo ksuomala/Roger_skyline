@@ -43,6 +43,8 @@ Click "Finish partitioning and write changes to disk"
 
 Now you can log into your Debian operating system. Desktop environment does not need to be installed.
 
+To check installed: ```sudo apt list --installed```
+
 Then we make sure that our Debian and packages are up to date as root:
 ```
 su
